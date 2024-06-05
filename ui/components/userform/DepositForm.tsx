@@ -3,6 +3,7 @@
 // components/Form.tsx
 import React, { useState } from "react";
 
+
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState("");
   const [key, setKey] = useState("");
@@ -95,7 +96,7 @@ const Form: React.FC = () => {
         </div>
 
         <p>IsDp:</p>
-        <select name="isDp" id="isDp" onChange={(e) => setIsDp(e.target.value)}>
+        <select name="isDp" id="isDp" onChange={(e) => setIsDp(e.target.value)} title="Is Deposit?">
           <option>True</option>
           <option>False</option>
         </select>

@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-// components/Form.tsx
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import styles from './ChangStatus.module.css';
 
 const Form: React.FC = () => {
-  const [agentUsername, setAgentUsername] = useState("");
-  const [key, setKey] = useState("");
-  const [username, setUsername] = useState("");
-  const [status, setStatus] = useState("");
-  const [web, setWeb] = useState("");
-  const [responseMessage, setResponseMessage] = useState("");
+  const [agentUsername, setAgentUsername] = useState('');
+  const [key, setKey] = useState('');
+  const [username, setUsername] = useState('');
+  const [status, setStatus] = useState('');
+  const [web, setWeb] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,11 +32,12 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles['form-container']}>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="agentUsername">Agent Username:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="agentUsername">Agent Username:</label>
           <input
+            className={styles['input']}
             type="text"
             id="agentUsername"
             value={agentUsername}
@@ -44,9 +45,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="key">Key:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="key">Key:</label>
           <input
+            className={styles['input']}
             type="text"
             id="key"
             value={key}
@@ -54,9 +56,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="username">Username:</label>
           <input
+            className={styles['input']}
             type="text"
             id="username"
             value={username}
@@ -64,19 +67,24 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <select
-          name="status"
-          id="status"
-          defaultValue="ACTIVE"
-          onChange={(e) => setStatus(e.target.value)}
-        >
-          <option>ACTIVE</option>
-          <option>LOCK</option>
-          <option>SUSPEND</option>
-        </select>
-        <div>
-          <label htmlFor="web">Web:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="status">Status:</label>
+          <select
+            className={`${styles['input']} ${styles['select']}`}
+            name="status"
+            id="status"
+            defaultValue="ACTIVE"
+            onChange={(e) => setStatus(e.target.value)}
+          >
+            <option>ACTIVE</option>
+            <option>LOCK</option>
+            <option>SUSPEND</option>
+          </select>
+        </div>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="web">Web:</label>
           <input
+            className={styles['input']}
             type="text"
             id="web"
             value={web}
@@ -84,9 +92,9 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles['button']} type="submit">Submit</button>
       </form>
-      {responseMessage && <p>{responseMessage}</p>}
+      {responseMessage && <p className={styles['response-message']}>{responseMessage}</p>}
     </div>
   );
 };

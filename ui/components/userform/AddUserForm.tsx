@@ -1,7 +1,7 @@
 'use client';
 
-// components/Form.tsx
 import React, { useState } from 'react';
+import styles from './AddUser.module.css';
 
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState('');
@@ -30,11 +30,12 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles['form-container']}>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="agentUsername">Agent Username:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="agentUsername">Agent Username:</label>
           <input
+            className={styles['input']}
             type="text"
             id="agentUsername"
             value={agentUsername}
@@ -42,9 +43,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="key">Key:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="key">Key:</label>
           <input
+            className={styles['input']}
             type="text"
             id="key"
             value={key}
@@ -52,9 +54,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="username">Username:</label>
           <input
+            className={styles['input']}
             type="text"
             id="username"
             value={username}
@@ -62,9 +65,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="name">Name:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="name">Name:</label>
           <input
+            className={styles['input']}
             type="text"
             id="name"
             value={name}
@@ -72,9 +76,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="password">Password:</label>
           <input
+            className={styles['input']}
             type="password"
             id="password"
             value={password}
@@ -82,9 +87,10 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="web">Web:</label>
+        <div className={styles['form-group']}>
+          <label className={styles['label']} htmlFor="web">Web:</label>
           <input
+            className={styles['input']}
             type="text"
             id="web"
             value={web}
@@ -92,9 +98,9 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles['button']} type="submit">Submit</button>
       </form>
-      {responseMessage && <p>{responseMessage}</p>}
+      {responseMessage && <p className={styles['response-message']}>{responseMessage}</p>}
     </div>
   );
 };

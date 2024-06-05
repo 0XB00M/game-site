@@ -2,6 +2,7 @@
 
 // components/Form.tsx
 import React, { useState } from "react";
+import styles from "./WithDraw.module.css";
 
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState("");
@@ -25,21 +26,30 @@ const Form: React.FC = () => {
 
     const formData = { agentUsername, key, username, balance, web };
 
-    const response = await fetch(
-      "https://api-test.ambexapi.com/api/v1/ext/withdrawal/664DF64C2EA2D0B684D1F1F7/testopuplunarr",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+    try {
+      const response = await fetch(
+        "https://api-test.ambexapi.com/api/v1/ext/withdrawal/664DF64C2EA2D0B684D1F1F7/testopuplunarr",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    const result = await response.json();
-    setResponseMessage(result.msg);
-    setData(result.data);
-    console.log(data);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+      setResponseMessage(result.msg);
+      setData(result.data);
+      console.log(data);
+    } catch (error) {
+      console.error('Error during form submission:', error);
+      setResponseMessage('Failed to submit form. Please try again.');
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +60,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="agentUsername">Agent Username:</label>
@@ -108,7 +118,7 @@ const Form: React.FC = () => {
       {/* User data */}
       <div>
         {responseMessage === "SUCCESS" ? (
-          <div>
+          <div className={styles.userData}>
             {Object.entries(data).map(([key, value]) => {
               if (key === "agent" && typeof value === "object") {
                 return (
@@ -124,7 +134,7 @@ const Form: React.FC = () => {
             })}
           </div>
         ) : (
-          <p>{responseMessage}</p>
+          <p className={styles.responseMessage}>{responseMessage}</p>
         )}
       </div>
     </div>

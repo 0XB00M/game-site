@@ -2,6 +2,7 @@
 
 // components/Form.tsx
 import React, { useState } from "react";
+import styles from "./GetProfileCreditForm.module.css";
 
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState("");
@@ -57,13 +58,12 @@ const Form: React.FC = () => {
     const result = await response.json();
     setResponseMessage(result.msg);
     setData(result.data);
-    console.log(data);
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="agentUsername">Agent Username:</label>
           <input
             type="text"
@@ -73,7 +73,7 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="key">Key:</label>
           <input
             type="text"
@@ -83,7 +83,7 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -93,7 +93,7 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <label htmlFor="web">Web:</label>
           <input
             type="text"
@@ -103,13 +103,13 @@ const Form: React.FC = () => {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.submitButton}>Submit</button>
       </form>
-      {responseMessage && <p>{responseMessage}</p>}
+      {responseMessage && <p className={styles.responseMessage}>{responseMessage}</p>}
 
       {/* User data */}
       {responseMessage === "SUCCESS" && (
-        <div>
+        <div className={styles.userData}>
           <p>Balance: {data.balance}</p>
           <p>Currency: {data.currency}</p>
           <p>Last Payment ID: {data.lastPaymentID}</p>
