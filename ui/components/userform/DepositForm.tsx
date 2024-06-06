@@ -1,6 +1,6 @@
 "use client";
 
-// components/Form.tsx
+// Components/Form.tsx
 import React, { useState } from "react";
 import styles from "./DepositForm.module.css";
 
