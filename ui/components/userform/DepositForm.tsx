@@ -2,7 +2,7 @@
 
 // components/Form.tsx
 import React, { useState } from "react";
-
+import styles from "./WithDraw.module.css";
 
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState("");
@@ -52,71 +52,83 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="agentUsername">Agent Username:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="agentUsername">Agent Username:</label>
           <input
             type="text"
             id="agentUsername"
+            className={styles.input}
             value={agentUsername}
             onChange={(e) => setAgentUsername(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="key">Key:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="key">Key:</label>
           <input
             type="text"
             id="key"
+            className={styles.input}
             value={key}
             onChange={(e) => setKey(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
+            className={styles.input}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="balance">Balance:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="balance">Balance:</label>
           <input
             type="number"
             id="balance"
+            className={styles.input}
             value={balance}
             onChange={handleInputChange}
             required
           />
         </div>
-
-        <p>IsDp:</p>
-        <select name="isDp" id="isDp" onChange={(e) => setIsDp(e.target.value)} title="Is Deposit?">
-          <option>True</option>
-          <option>False</option>
-        </select>
-        <div>
-          <label htmlFor="web">Web:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="isDp">Is Deposit:</label>
+          <select
+            name="isDp"
+            id="isDp"
+            className={styles.input}
+            onChange={(e) => setIsDp(e.target.value)}
+            title="Is Deposit?"
+          >
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="web">Web:</label>
           <input
             type="text"
             id="web"
+            className={styles.input}
             value={web}
             onChange={(e) => setWeb(e.target.value)}
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.button}>Submit</button>
       </form>
 
       {/* User data */}
       <div>
         {responseMessage === "SUCCESS" ? (
-          <div>
+          <div className={styles.userData}>
             {Object.entries(data).map(([key, value]) => {
               if (key === "agent" && typeof value === "object") {
                 return (
@@ -132,7 +144,7 @@ const Form: React.FC = () => {
             })}
           </div>
         ) : (
-          <p>{responseMessage}</p>
+          <p className={styles.responseMessage}>{responseMessage}</p>
         )}
       </div>
     </div>
