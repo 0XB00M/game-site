@@ -1,49 +1,68 @@
 .formContainer {
-  max-width: 400px;
+  width: 100%;
+  max-width: 400px; 
   margin: 0 auto;
   padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #f4f4f4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.form {
-  margin-bottom: 15px;
+.formGroup {
+  margin-bottom: 20px;
 }
 
 .label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
 }
 
 .input {
   width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
+  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  outline: none;
 }
 
 .button {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
+  padding: 12px;
+  background: #007bff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background-color: #0056b3;
-}
-
-.userData {
-  margin-top: 20px;
+  background: #0056b3;
 }
 
 .responseMessage {
   margin-top: 20px;
-  color: red;
+  padding: 10px;
+  font-size: 16px;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #d4edda;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.userData p {
+  margin: 5px 0;
 }
