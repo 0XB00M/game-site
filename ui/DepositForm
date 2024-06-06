@@ -2,7 +2,7 @@
 
 // components/Form.tsx
 import React, { useState } from "react";
-import styles from "./WithDraw.module.css";
+import styles from "./DepositForm.module.css";
 
 const Form: React.FC = () => {
   const [agentUsername, setAgentUsername] = useState("");
@@ -98,6 +98,7 @@ const Form: React.FC = () => {
             required
           />
         </div>
+
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="isDp">Is Deposit:</label>
           <select
