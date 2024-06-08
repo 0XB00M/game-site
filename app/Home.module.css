@@ -1,0 +1,74 @@
+.container {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #f0f0f0;
+  }
+  
+  
+  .h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+  }
+  .banner {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .bannerSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .bannerItem {
+    margin: 10px;
+    
+  }
+  
+  .bannerItem img {
+    border-radius: 8px;
+    
+  }
+  
+  .gameList {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .gameItem {
+    text-align: center;
+  }
+  
+  .gameItem img {
+    border-radius: 8px;
+  }
+  
+  .promotionList {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .promotionItem {
+    margin: 10px;
+  }
+  
+  .promotionItem img {
+    border-radius: 8px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+  }
