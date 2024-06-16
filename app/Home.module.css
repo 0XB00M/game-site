@@ -1,74 +1,104 @@
 .container {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 0 20px;
-    background-color: #f0f0f0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-image: url('/image/DEMOgame_bg1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+  .header {
+  display: flex;
+  background-image: url('/image/Demo888_header01_03.png');
+  padding: 20px 0;
   }
   
-  
-  .h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 50px;
-    color: #333;
-  }
-  .banner {
-    display: flex;
-    justify-content: center;
+  .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   }
   
-  .bannerSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .logoContainer {
+  display: flex;
+  align-items: center;
+  }
+  .logoContainer img {
+    width: 600px; 
+    height: 400; 
+    margin-right: 20px; 
+  }
+  .navLink {
+  margin-right: 10px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-size: 1.5vw;
+  text-decoration: none;
+  padding: 15pxnpm ;
+  justify-content: space-between;
+  }
+  @media (max-width: 720px) {
+    .navLink {
+      font-size: 5vw; 
+    }
+  }
+  .authLink {
+  margin-right: 10px;
+  margin-bottom: 30px;
   }
   
-  .bannerItem {
-    margin: 10px;
-    
+  .bannerTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
   }
   
-  .bannerItem img {
-    border-radius: 8px;
-    
+  .bannerTopImage {
+  flex: 1;
+  margin-right: 10px;
   }
   
-  .gameList {
-    display: flex;
-    justify-content: space-around;
+  .main {
+  padding: 20px 0;
   }
   
-  .gameItem {
-    text-align: center;
+  .section {
+  margin-bottom: 20px;
   }
   
-  .gameItem img {
-    border-radius: 8px;
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
   }
   
-  .promotionList {
-    display: flex;
-    justify-content: center;
-  }
+  .card {
+  padding: 5px;
+  text-align: center;
   
-  .promotionItem {
-    margin: 10px;
-  }
-  
-  .promotionItem img {
-    border-radius: 8px;
   }
   
   .footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
+  height: 500px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
   }
   
-  .footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
+  .footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .footerLogo {
+  margin-right: 10px;
+  margin-top: 200px;
+  }
+  .footerLogomenu {
+  margin-bottom: 200px;
+  justify-content: center;
   }
