@@ -13,22 +13,23 @@ const Game: React.FC<Props> = ({ tab }) => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const data = [
-    {
-      provider: '',
-      providerName: '',
-      gameType: [],
-      logoURL: '',
-      logoMobileURL: '',
-      logoTransparentURL: '',
-      image: {
-        vertical: '',
-        horizontal: '',
-        banner: ''
-      },
-      status: ''
-    }
-  ]
+  
+  // const data = [
+  //   {
+  //     provider: '',
+  //     providerName: '',
+  //     gameType: [],
+  //     logoURL: '',
+  //     logoMobileURL: '',
+  //     logoTransparentURL: '',
+  //     image: {
+  //       vertical: '',
+  //       horizontal: '',
+  //       banner: ''
+  //     },
+  //     status: ''
+  //   }
+  // ]
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,10 +50,11 @@ const Game: React.FC<Props> = ({ tab }) => {
           throw new Error('Failed to fetch data');
         }
         const data = await response.json();
-        console.log(data);
-        setGames(data);
+
+        
+        setGames(data.data);
         setLoading(false);
-        console.log(games)
+        console.log(games);
       } catch (error: any) {
         setError(error.message);
         setLoading(false);
@@ -67,6 +69,7 @@ const Game: React.FC<Props> = ({ tab }) => {
 
   return (
     <div>
+      
     </div>
   );
 };
