@@ -9,43 +9,45 @@
   background-position: center center;
   }
   .header {
-  display: flex;
-  background-image: url('/image/Demo888_header01_03.png');
-  padding: 20px 0;
+    display: flex;
+    flex-direction: column; /* Default to row for larger screens */
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('/image/Demo888_header01_03.png');
+    padding: 20px;
+    width: 100%;
   }
   
   .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
   
   .logoContainer {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   }
+  
   .logoContainer img {
-    width: 600px; 
-    height: 400; 
-    margin-right: 20px; 
+    width: 10vh; /* Adjusted width for initial load */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px;
   }
+  
   .navLink {
-  margin-right: 10px;
-  margin-bottom: 40px;
-  color: #ffffff;
-  font-size: 1.5vw;
-  text-decoration: none;
-  padding: 15pxnpm ;
-  justify-content: space-between;
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    padding: auto 10vw;
   }
-  @media (max-width: 720px) {
-    .navLink {
-      font-size: 5vw; 
-    }
-  }
+  
   .authLink {
-  margin-right: 10px;
-  margin-bottom: 30px;
+    margin-right:auto 40px;
+    margin-bottom: 30px;
+    padding: 10px;
   }
   
   .bannerTop {
@@ -65,13 +67,14 @@
   
   .section {
   margin-bottom: 20px;
+  
   }
   
   .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 10px;
+  gap: auto 10vw;
   }
   
   .card {
@@ -90,13 +93,15 @@
   
   .footerContent {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   }
   
   .footerLogo {
-  margin-right: 10px;
+  margin-right: auto 10px ;
   margin-top: 200px;
+  
+  
   }
   .footerLogomenu {
   margin-bottom: 200px;
