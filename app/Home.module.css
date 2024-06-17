@@ -10,7 +10,7 @@
   }
   .header {
     display: flex;
-    flex-direction: column; /* Default to row for larger screens */
+    flex-direction: column; 
     align-items: center;
     justify-content: space-between;
     background-image: url('/image/Demo888_header01_03.png');
@@ -31,8 +31,8 @@
   }
   
   .logoContainer img {
-    width: 10vh; /* Adjusted width for initial load */
-    height: auto; /* Maintain aspect ratio */
+    width: 10vh; 
+    height: auto; 
     margin-right: 20px;
   }
   
