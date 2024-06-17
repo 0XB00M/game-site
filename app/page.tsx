@@ -23,10 +23,10 @@ export default function Home() {
           <a className={styles.navLink} href="#">โปรโมชั่น</a>
           <a className={styles.navLink} href="#">ฝากต่อเนื่อง</a>
           <a className={styles.navLink} href="#">พันธมิตร</a>
-          <a className={styles.authLink} href="#">
+          <a className={styles.authLink} href="#" aria-label="Login">
             <Image src="/image/Butt_login.png" alt="Login" width={130} height={46} />
           </a>
-          <a className={styles.authLink} href="#">
+          <a className={styles.authLink} href="/admin-panel/add-user" aria-label="Register">
             <Image src="/image/Butt_register.png" alt="Register" width={130} height={46} />
           </a>
         </div>
