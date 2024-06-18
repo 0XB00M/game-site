@@ -7,103 +7,214 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  }
-  .header {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    justify-content: space-between;
-    background-image: url('/image/Demo888_header01_03.png');
-    padding: 20px;
-    width: 100%;
-  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url('/image/Demo888_header01_03.png');
+  padding: 20px;
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
   
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .logoContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logoContainer img {
-    width: 10vh; 
-    height: auto; 
-    margin-right: 20px;
-  }
-  
-  .navLink {
-    margin-right: 10px;
-    color: #ffffff;
-    font-size: 1.5vw;
-    text-decoration: none;
-    padding: auto 10vw;
-  }
-  
-  .authLink {
-    margin-right:auto 40px;
-    margin-bottom: 30px;
-    padding: 10px;
-  }
-  
-  .bannerTop {
+}
+
+.logoContainer img {
+  width: 10vh;
+  height: auto;
+  margin-right: 20px;
+}
+
+.navLink {
+  margin-right: 10px;
+  color: #ffffff;
+  font-size: 1.5vw;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.authLink {
+  flex-direction: column;
+  margin-right: auto;
+  margin: auto;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.authLink img {
+  width: 80px; 
+  height: auto; 
+}
+
+.bannerTop {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  }
-  
-  .bannerTopImage {
+}
+
+.bannerTopImage {
   flex: 1;
   margin-right: 10px;
-  }
-  
-  .main {
+}
+
+.main {
   padding: 20px 0;
-  }
-  
-  .section {
+}
+
+.section {
   margin-bottom: 20px;
-  
-  }
-  
-  .grid {
+}
+
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: auto 10vw;
-  }
-  
-  .card {
+  gap: 10px;
+}
+
+.card {
   padding: 5px;
   text-align: center;
-  
-  }
-  
-  .footer {
-  height: 500px;
+}
+
+.footer {
   background-color: #000000;
   color: #ffffff;
   padding: 20px 0;
   text-align: center;
-  }
-  
-  .footerContent {
+}
+
+.footerContent {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  }
-  
-  .footerLogo {
-  margin-right: auto 10px ;
-  margin-top: 200px;
-  
-  
-  }
-  .footerLogomenu {
+}
+
+.footerLogo {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: center;
+}
+
+.footerLogomenu {
   margin-bottom: 200px;
   justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
   }
+  .section {
+    padding: 20px; 
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ปรับขนาดอัตโนมัติ */
+    gap: 10px;
+  }
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerLogo, .footerLogomenu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    align-items: flex-start;
+  }
+
+  .logoContainer img {
+    width: 15vh;
+    margin-right: 10px;
+  }
+
+  .navLink {
+    display: none;
+  }
+
+  .authLink {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    font-size: 1vw;
+    padding: 5px;
+  }
+
+  .authLink img {
+    width: 60px; 
+    height: auto;
+  }
+
+  .section {
+    padding: 20px; 
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ปรับขนาดอัตโนมัติ */
+    gap: 10px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerLogo, .footerLogomenu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+.slidemenu {
+  display: none; 
+}
+
+
+@media (max-width: 767px) {
+  .slidemenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+  }
+
+  .slidemenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .slidemenu li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .slidemenu a {
+    color: #ffffff;
+    font-size: 1.5em;
+    text-decoration: none;
+  }
+}
