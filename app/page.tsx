@@ -1,8 +1,31 @@
+// page.tsx
+
+"use client";
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from './Home.module.css';
+import SlideMenu from '@/ui/components/userform/SlideMenu';
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,19 +39,25 @@ export default function Home() {
           <div className={styles.logoContainer}>
             <Image src="/image/Demo888_logo1.png" alt="DEMO888 Logo" width={356} height={137} />
           </div>
-          <a className={styles.navLink} href="#">slot</a>
-          <a className={styles.navLink} href="#">คาสิโน</a>
-          <a className={styles.navLink} href="#">กีฬา</a>
-          <a className={styles.navLink} href="#">สิทธิพิเศษ</a>
-          <a className={styles.navLink} href="#">โปรโมชั่น</a>
-          <a className={styles.navLink} href="#">ฝากต่อเนื่อง</a>
-          <a className={styles.navLink} href="#">พันธมิตร</a>
-          <a className={styles.authLink} href="#" aria-label="Login">
+          {isMobile ? (
+            <SlideMenu />
+          ) : (
+            <>
+              <Link href="https://www.fideg.org/" className={styles.navLink}>slot</Link>
+              <Link href="/casino" className={styles.navLink}>คาสิโน</Link>
+              <Link href="https://www.symbiont.io/" className={styles.navLink}>กีฬา</Link>
+              <Link href="/special" className={styles.navLink}>สิทธิพิเศษ</Link>
+              <Link href="/promotions" className={styles.navLink}>โปรโมชั่น</Link>
+              <Link href="/continuous-deposit" className={styles.navLink}>ฝากต่อเนื่อง</Link>
+              <Link href="https://www.sbobetonline24.com/" className={styles.navLink}>พันธมิตร</Link>
+            </>
+          )}
+          <Link href="/login" className={styles.authLink} aria-label="Login">
             <Image src="/image/Butt_login.png" alt="Login" width={130} height={46} />
-          </a>
-          <a className={styles.authLink} href="/admin-panel/add-user" aria-label="Register">
+          </Link>
+          <Link href="/admin-panel/add-user" className={styles.authLink} aria-label="Register">
             <Image src="/image/Butt_register.png" alt="Register" width={130} height={46} />
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -46,35 +75,51 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.banner}>
-        <Image src="/image/Demo888_Title_pic01.png" alt="แบนเนอร์หลัก" layout="responsive" width={750} height={236} />
+          <Image src="/image/Demo888_Title_pic01.png" alt="แบนเนอร์หลัก" layout="responsive" width={750} height={236} />
           <Image src="/image/Demo888_banner_large01.png" alt="แบนเนอร์หลัก" layout="responsive" width={1024} height={345} />
         </div>
 
         <section className={styles.section}>
           <div className={styles.grid}>
             <div className={styles.card}>
-              <Image src="/image/freecredit.png" alt="ภาพที่ 1" width={210} height={342} />              
+              <Link href="/page1">
+                <Image src="/image/freecredit.png" alt="ภาพที่ 1" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/entrance.png" alt="ภาพที่ 2" width={210} height={342} />             
+              <Link href="/page2">
+                <Image src="/image/entrance.png" alt="ภาพที่ 2" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/depost-3.png" alt="ภาพที่ 3" width={210} height={342} />
+              <Link href="/admin-panel/deposit">
+                <Image src="/image/depost-3.png" alt="ภาพที่ 3" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/cashback.png" alt="ภาพที่ 4" width={210} height={342} />
+              <Link href="/page4">
+                <Image src="/image/cashback.png" alt="ภาพที่ 4" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/linkget.png" alt="ภาพที่ 5" width={210} height={342} />
+              <Link href="/page5">
+                <Image src="/image/linkget.png" alt="ภาพที่ 5" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/transection.png" alt="ภาพที่ 6" width={210} height={342} />
+              <Link href="/admin-panel/history">
+                <Image src="/image/transection.png" alt="ภาพที่ 6" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/promo.png" alt="ภาพที่ 7" width={210} height={342} />
+              <Link href="/page7">
+                <Image src="/image/promo.png" alt="ภาพที่ 7" width={210} height={342} />
+              </Link>
             </div>
             <div className={styles.card}>
-              <Image src="/image/withdraw.png" alt="ภาพที่ 8" width={210} height={342} />
+              <Link href="/admin-panel/withdraw">
+                <Image src="/image/withdraw.png" alt="ภาพที่ 8" width={210} height={342} />
+              </Link>
             </div>
           </div>
         </section>
