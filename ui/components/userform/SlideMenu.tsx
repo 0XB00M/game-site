@@ -1,6 +1,8 @@
-'use client';
 // SlideMenu.tsx
+'use client';
+
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from './SlideMenu.module.css';
 
 const SlideMenu: React.FC = () => {
@@ -24,10 +26,14 @@ const SlideMenu: React.FC = () => {
                     ✕
                 </button>
                 <ul>
-                    <li><a href="#">เกม</a></li>
-                    <li><a href="/admin-panel/deposit">ฝาก</a></li>
-                    <li><a href="/admin-panel/withdraw">ถอน</a></li>
-                    <li><a href="/admin-panel/history">ประวัติ</a></li>
+                    <li><Link href="https://www.fideg.org/">slot</Link></li>
+                    <li><Link href="/casino">คาสิโน</Link></li>
+                    <li><Link href="https://www.symbiont.io/">กีฬา</Link></li>
+                    <li><Link href="/special">สิทธิพิเศษ</Link></li>
+                    <li><Link href="/promotions">โปรโมชั่น</Link></li>
+                    <li><Link href="/continuous-deposit">ฝากต่อเนื่อง</Link></li>
+                    <li><Link href="https://www.sbobetonline24.com/">พันธมิตร</Link></li>
+                    
                 </ul>
             </div>
         </div>
